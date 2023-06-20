@@ -1322,5 +1322,9 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .sm\:leading-10 {
+  line-height: 2.5rem;
+  }
 }
   
