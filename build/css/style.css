@@ -559,11 +559,6 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -859,6 +854,10 @@ video {
   padding-bottom: 2rem;
 }
 
+.pb-\[5\.5rem\] {
+  padding-bottom: 5.5rem;
+}
+
 .pb-\[7\.5rem\] {
   padding-bottom: 7.5rem;
 }
@@ -869,10 +868,6 @@ video {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pb-\[5\.5rem\] {
-  padding-bottom: 5.5rem;
 }
 
 .text-center {

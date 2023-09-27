@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="/build/javascript/smoothie.js"></script>
+</head>
+
+<body class="gradient-backdrop min-h-screen overflow-x-hidden bg-[#f5f5f7] align-baseline leading-none text-white dark:bg-[#1d1d1f]">
+  <!-- Wrapper -->
+  <div class="mx-auto w-[90rem] max-w-[calc(100%-4rem)]">
+    <!-- Header -->
+    <header class="top-0 z-10 mx-auto flex max-w-[88rem] items-center justify-between p-4 text-center text-[#f5f5f7]">
+      <!-- Portfolio Title  -->
+      <h1 class="p-2 text-2xl font-medium text-[#f5f5f7]">
+        <a href="#" id="logo">My Portfolio</a>
+      </h1>
+      <!-- Navigation -->
+      <!-- Navigation Items in a PHP Array -->
+      <?php
+      $navItems = [
+        ['url' => 'index.php', 'text' => 'Home'],
+        ['url' => '#', 'text' => 'About'],
+        ['url' => 'error_404.php', 'text' => 'Projects'],
+        ['url' => 'index.php', 'text' => 'Contacts'],
+      ];
+      ?>
+
+      <!-- Generates navigation items dynamically -->
+      <nav class="hidden space-x-12 overflow-hidden text-xl sm:block" aria-label="main">
+        <?php foreach ($navItems as $navItem) : ?>
+          <a href="<?php echo $navItem['url']; ?>" class="hover:opacity-90 px-6 py-2"><?php echo $navItem['text']; ?></a>
+        <?php endforeach; ?>
+      </nav>
+
+      <!-- Message Button -->
+      <div>
+        <button class="ghost-white hidden overflow-hidden rounded-2xl bg-none px-4 py-2 text-lg text-white outline outline-2 sm:flex" id="msg_me">
+          <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+          <lord-icon src="https://cdn.lordicon.com/pkmkagva.json" trigger="hover" target="button#msg_me" colors="primary:#FFFFFF" style="width: 25px; height: 25px">
+          </lord-icon>
+          <p class="ml-2">Message Me</p>
+        </button>
+
+        <!-- Mobile Button -->
+        <button id="mobile-open-button" class="text-3xl focus:outline-none sm:hidden">
+          &#9776;
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="glassy mt-8 mb-16 max-w-full overflow-hidden !rounded-3xl pb-[5.5rem] pt-8 fade-in-bck" id="gallery">
+
+        <!-- Photo Gallery -->
+        <h1 class="text-center text-[2em] font-semibold p-10">Picture Gallery</h1>
+        <div class="gallery-image">
+
+          <div class="img-box">
+            <img src="images/lifetime pictures/Elem.jpg">
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Elementary</p>
+                <p class="opacity-low">6th Grade</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="img-box">
+            <img src="images/lifetime pictures/HS.jpg">
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Junior Highschool</p>
+                <p class="opacity-low">10th Grade</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="img-box">
+            <img src="images/lifetime pictures/HS2.jpg">
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Junior Highschool</p>
+                <p class="opacity-low">10th Grade</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="img-box">
+            <img src="images/lifetime pictures/College.jpg">
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Senior Highschool</p>
+                <p class="opacity-low">11th Grade</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="img-box">
+            <img src="images/lifetime pictures/College2.jpg">
+            <div class="transparent-box">
+              <div class="caption">
+                <p>College</p>
+                <p class="opacity-low">2nd Year</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="my-6 text-xl mx-4 sm:mx-0 sm:text-4xl font-medium sm:leading-10">
+            More images coming soon...
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-10 inset-x-0 bottom-0">
+    <div class=" mx-auto flex flex-col sm:flex-row w-[72rem] max-w-[calc(100%-4rem)] gap-8">
+      <div class=" flex flex-col sm:mx-auto space-y-6">
+        <!-- Footer Navigation -->
+        <h4 class="text-gray-400 text-xl font-semibold mb-4">Navigation</h4>
+        <?php
+        $footer_navItems = [
+          ['url' => '#logo', 'text' => 'Home'],
+          ['url' => '#about', 'text' => 'About'],
+          ['url' => '#proj', 'text' => 'Projects'],
+          ['url' => '#sugg', 'text' => 'Contact'],
+        ];
+        ?>
+
+        <ul class="grid grid-cols-2 gap-4 sm:gap-0 sm:flex sm:flex-col sm:space-y-6">
+          <?php foreach ($footer_navItems as $footer_navItem) : ?>
+            <li><a href="<?php echo $footer_navItem['url']; ?>" class="hover:text-gray-500">
+                <?php echo $footer_navItem['text']; ?> </a> </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+      <div class="flex flex-col sm:mx-auto space-y-6">
+        <h4 class="text-gray-400 text-xl font-semibold mb-4">Contact Information</h4>
+        <p class="text-gray-400">Address: <i>Project 8, Quezon City</i></p>
+        <p class="text-gray-400">Email: khoviimalow@gmail.com</p>
+        <p class="text-gray-400">Phone: 09606977***</p>
+      </div>
+      <div class="flex flex-col sm:mx-auto space-y-6">
+        <h4 class="text-gray-400 text-xl font-semibold mb-4">Social Media</h4>
+        <ul class="grid grid-cols-2 gap-4 sm:gap-0 sm:flex sm:flex-col sm:space-y-6">
+          <li><a href="https://www.facebook.com/kobe.malonzo/" class="hover:text-gray-500">Facebook</a></li>
+          <li><a href="https://twitter.com/Kokay___" class="hover:text-gray-500">Twitter</a></li>
+          <li><a href="https://discordapp.com/users/723888526457962557" class="hover:text-gray-500">Discord</a></li>
+          <li><a href="https://github.com/Khonsensya" class="hover:text-gray-500">Github</a></li>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
