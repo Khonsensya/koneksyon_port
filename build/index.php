@@ -15,6 +15,9 @@ $myName = "Christian Kobe Malonzo";
 $myAddress = "Project 8, Quezon City";
 $myEmail = "khoviimalow@gmail.com";
 $myNumber = "09606977***";
+$myCourse = "Computer Science";
+
+$yearNow = date("Y");
 ?>
 
 <body class="gradient-backdrop min-h-screen bg-[#f5f5f7] align-baseline overflow-x-hidden leading-none text-white dark:bg-[#1d1d1f]">
@@ -50,7 +53,9 @@ $myNumber = "09606977***";
           <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
           <lord-icon src="https://cdn.lordicon.com/pkmkagva.json" trigger="hover" target="button#msg_me" colors="primary:#FFFFFF" style="width: 25px; height: 25px">
           </lord-icon>
-          <p class="ml-2">Message Me</p>
+          <p class="ml-2">
+            <?php echo "Message Me"; ?>
+          </p>
         </button>
 
         <!-- Mobile Button -->
@@ -72,7 +77,7 @@ $myNumber = "09606977***";
             <?php echo $myName ?>
           </h1>
           <p class="mx-4 max-w-fit text-center text-xl sm:text-left">
-            I am a Computer Science Student aiming to become a front-end
+            I am a <?php echo $myCourse; ?> Student aiming to become a front-end
             developer.
           </p>
         </div>
@@ -86,52 +91,59 @@ $myNumber = "09606977***";
       <!-- First Section -->
       <section class="glassy mb-24 block max-w-full bg-orange-300 p-[2.25rem] text-center sm:p-[4.75rem]" id="about">
         <!-- Life Experiences -->
+
+        <?php
+
+        $life_details = [
+          ['image' => 'images/sunny_days.png', 'category' => "Elementary Days", 'backstory' =>
+          "I spent my elementary days in Child's Future Guided Academe, and
+          Villagers Montessori College. I made a lot of memories there and
+          also participated inter-school events, such as the ISAAL Math
+          Challenge, and ISAAL I.T Challenge."],
+          //Separator
+          ['image' => 'images/crystal.png', 'category' => "Highschool Achievements", 'backstory' =>
+          "My junior highschool days continued in Villagers Montessori
+          College. On the other hand, my senior highschool days were at
+          STI-Munoz EDSA. I was an ITMAWD student because it was the most
+          practical choice, and I learned a lot about coding, web design,
+          and a little bit about databases."],
+          //Separator
+          ['image' => 'images/flames.png', 'category' => "College Struggles", 'backstory' =>
+          "I applied to several colleges, but it was either I didn't pass
+          the entrance exam, or my parents didn't like my chosen
+          university. I was forced to continue my studies at STI."],
+        ];
+
+        ?>
         <header class="mb-4">
-          <h1 class="mb-4 text-2xl font-semibold">Experiences in Life</h1>
+          <h1 class="mb-4 text-2xl font-semibold">
+            <?php echo "Experiences in Life"; ?>
+          </h1>
           <span class="gradient-backdrop mx-auto my-2 block h-[2px] self-center sm:w-[16em]"></span>
         </header>
+
+        <!-- Lists of Life Experiences -->
         <ul class="featured-list items-baseline">
-          <!-- Elementary -->
-          <li class="flex flex-col items-center justify-center">
-            <img src="images/sunny_days.png" class="mb-8 p-4" />
-            <h2 class="text-xl font-semibold">Elementary Days</h2>
-            <p class="mt-4 text-justify leading-relaxed">
-              I spent my elementary days in Child's Future Guided Academe, and
-              Villagers Montessori College. I made a lot of memories there and
-              also participated inter-school events, such as the ISAAL Math
-              Challenge, and ISAAL I.T Challenge.
-            </p>
-          </li>
 
-          <!-- Highschool -->
-          <li class="flex flex-col items-center justify-center">
-            <img src="images/crystal.png" class="mb-8 p-4" />
-            <h2 class="text-xl font-semibold">Highschool Achievements</h2>
-            <p class="mt-4 text-justify leading-relaxed">
-              My junior highschool days continued in Villagers Montessori
-              College. On the other hand, my senior highschool days were at
-              STI-Munoz EDSA. I was an ITMAWD student because it was the most
-              practical choice, and I learned a lot about coding, web design,
-              and a little bit about databases.
-            </p>
-          </li>
+          <?php foreach ($life_details as $life_detail) : ?>
 
-          <!-- College -->
-          <li class="flex flex-col items-center justify-center">
-            <img src="images/flames.png" class="mb-8 p-4" />
-            <h2 class="text-xl font-semibold">College Struggles</h2>
-            <p class="mt-4 text-justify leading-relaxed">
-              I applied to several colleges, but it was either I didn't pass
-              the entrance exam, or my parents didn't like my chosen
-              university. I was forced to continue my studies at STI.
-            </p>
-          </li>
+            <li class="flex flex-col items-center justify-center">
+              <img src="<?php echo $life_detail['image']; ?>" class="mb-8 p-4" />
+              <h2 class="text-xl font-semibold"><?php echo $life_detail['category'] ?></h2>
+              <p class="mt-4 text-justify leading-relaxed">
+                <?php echo $life_detail['backstory'] ?>
+              </p>
+            </li>
+          <?php endforeach; ?>
+
         </ul>
 
         <!-- About Me -->
         <a href="about.php">
           <button class="mx-auto flex shadowed items-center shadowed rounded-full border-2 border-white px-6 py-4 text-white" id="to-about">
-            <p class="mr-3 text-lg">Learn More</p>
+            <p class="mr-3 text-lg">
+              <?php echo "Learn More"; ?>
+            </p>
             <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
             <lord-icon src="https://cdn.lordicon.com/jxwksgwv.json" trigger="hover" target="button#to-about" colors="primary:#f5f5f7" state="hover-3" style="width: 25px; height: 25px">
             </lord-icon>
@@ -143,39 +155,45 @@ $myNumber = "09606977***";
   <!-- Second Section -->
   <section class="bg-[#313135] block text-center p-[2.25rem] sm:px-[6.75rem] py-12 mb-8" id="proj">
     <header class="bg-[#313135] block py-8 mb-[1.5em]">
-      <h1 class="mb-4 text-2xl font-semibold">Skills and Assets</h1>
+      <h1 class="mb-4 text-2xl font-semibold">
+        <?php echo "Skills and Assets"; ?>
+      </h1>
       <span class="bg-[#f5f5f7] mx-auto mb-4 block h-[2px] self-center sm:w-[16em]"></span>
-      <p class="leading-6  sm:text-xl"> These are all the programming languages and skills I have developed over the years. <br class="hidden sm:block"> I still have a lot to learn, so join me on this journey of becoming a professional developer. </p>
+      <p class="leading-6  sm:text-xl">
+        These are all the programming languages and skills I have developed over the years 2020 - <?php echo $yearNow ?>.
+        <br class="hidden sm:block">
+        I still have a lot to learn, so join me on this journey of becoming a professional developer.
+      </p>
     </header>
 
     <!-- List of Skills -->
+
+    <?php
+    $skillsets = [
+      ['image' => 'images/html_5.png', 'label' => 'HTML'],
+      ['image' => 'images/css-3.png', 'label' => 'Tailwind CSS'],
+      ['image' => 'images/office.png', 'label' => 'MS Office'],
+      ['image' => 'images/c-sharp.png', 'label' => 'C#'],
+      ['image' => 'images/java.png', 'label' => 'Java'],
+    ];
+    ?>
+
     <ul class="stats">
-      <li>
-        <span class="icon"> <img src="images/html_5.png" class="block w-full"> </span>
-        <strong>HTML</strong>
-      </li>
-      <li>
-        <span class="icon"> <img src="images/css-3.png" class="block w-full"> </span>
-        <strong>Tailwind CSS</strong>
-      </li>
-      <li>
-        <span class="icon"> <img src="images/office.png" class="block w-full"> </span>
-        <strong>MS Office</strong>
-      </li>
-      <li>
-        <span class="icon"> <img src="images/c-sharp.png" class="block w-full"> </span>
-        <strong>C#</strong>
-      </li>
-      <li>
-        <span class="icon"> <img src="images/java.png" class="block w-full"> </span>
-        <strong>Java</strong>
-      </li>
+      <?php foreach ($skillsets as $skillset) : ?>
+        <li>
+          <span class="icon"> <img src="<?php echo $skillset['image']; ?>" class="block w-full"> </span>
+          <strong><?php echo $skillset['label']; ?></strong>
+        </li>
+      <?php endforeach; ?>
+
     </ul>
 
     <!-- Projects -->
     <a href="error_404.php">
       <button class="mx-auto flex shadowed items-center shadowed rounded-full border-2 border-white px-6 py-4 text-white" id="to-soon">
-        <p class="mr-3 text-lg">View Projects</p>
+        <p class="mr-3 text-lg">
+          <?php echo "View Projects"; ?>
+        </p>
         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
         <lord-icon src="https://cdn.lordicon.com/jxwksgwv.json" trigger="hover" target="button#to-soon" colors="primary:#f5f5f7" state="hover-3" style="width: 25px; height: 25px">
         </lord-icon>
@@ -227,11 +245,21 @@ $myNumber = "09606977***";
       </div>
       <div class="flex flex-col sm:mx-auto space-y-6">
         <h4 class="text-gray-400 text-xl font-semibold mb-4">Social Media</h4>
+
+        <?php
+        $social_Links = [
+          ['url' => 'https://www.facebook.com/kobe.malonzo/', 'socmed' => 'Facebook'],
+          ['url' => 'https://twitter.com/Kokay___', 'socmed' => 'Twitter'],
+          ['url' => 'https://discordapp.com/users/723888526457962557', 'socmed' => 'Discord'],
+          ['url' => 'https://github.com/Khonsensya', 'socmed' => 'Github'],
+        ];
+        ?>
+
         <ul class="grid grid-cols-2 gap-4 sm:gap-0 sm:flex sm:flex-col sm:space-y-6">
-          <li><a href="https://www.facebook.com/kobe.malonzo/" class="hover:text-gray-500">Facebook</a></li>
-          <li><a href="https://twitter.com/Kokay___" class="hover:text-gray-500">Twitter</a></li>
-          <li><a href="https://discordapp.com/users/723888526457962557" class="hover:text-gray-500">Discord</a></li>
-          <li><a href="https://github.com/Khonsensya" class="hover:text-gray-500">Github</a></li>
+          <?php foreach ($social_Links as $social_Link) : ?>
+            <li><a href="<?php echo $social_Link['url']; ?>" class="hover:text-gray-500">
+                <?php echo $social_Link['socmed']; ?></a></li>
+          <?php endforeach; ?>
       </div>
     </div>
   </footer>
@@ -240,5 +268,6 @@ $myNumber = "09606977***";
 
 
 </body>
+<?php ?>
 
 </html>

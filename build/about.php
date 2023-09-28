@@ -9,6 +9,14 @@
   <script src="/build/javascript/smoothie.js"></script>
 </head>
 
+<?php
+
+$myAddress = "Project 8, Quezon City";
+$myEmail = "khoviimalow@gmail.com";
+$myNumber = "09606977***";
+
+?>
+
 <body class="gradient-backdrop min-h-screen overflow-x-hidden bg-[#f5f5f7] align-baseline leading-none text-white dark:bg-[#1d1d1f]">
   <!-- Wrapper -->
   <div class="mx-auto w-[90rem] max-w-[calc(100%-4rem)]">
@@ -19,6 +27,7 @@
         <a href="#" id="logo">My Portfolio</a>
       </h1>
       <!-- Navigation -->
+
       <!-- Navigation Items in a PHP Array -->
       <?php
       $navItems = [
@@ -59,57 +68,32 @@
         <h1 class="text-center text-[2em] font-semibold p-10">Picture Gallery</h1>
         <div class="gallery-image">
 
-          <div class="img-box">
-            <img src="images/lifetime pictures/Elem.jpg">
-            <div class="transparent-box">
-              <div class="caption">
-                <p>Elementary</p>
-                <p class="opacity-low">6th Grade</p>
+          <?php
+          $gallery_Images = [
+            ['pic' => 'images/lifetime pictures/Elem.jpg', 'stage' => 'Elementary', 'level' => "6th Grade"],
+            ['pic' => 'images/lifetime pictures/HS.jpg', 'stage' => 'Junior Highschool', 'level' => "10th Grade"],
+            ['pic' => 'images/lifetime pictures/HS2.jpg', 'stage' => 'Junior Highschool', 'level' => "10th Grade"],
+            ['pic' => 'images/lifetime pictures/College.jpg', 'stage' => 'Senior Highschool', 'level' => "11th Grade"],
+            ['pic' => 'images/lifetime pictures/College2.jpg', 'stage' => 'College', 'level' => "2nd Year"],
+          ];
+          ?>
+
+          <?php foreach ($gallery_Images as $gallery_Image) : ?>
+            <div class="img-box">
+              <img src="<?php echo $gallery_Image['pic']; ?>">
+              <div class="transparent-box">
+                <div class="caption">
+                  <p>
+                    <?php echo $gallery_Image['stage']; ?>
+                  </p>
+
+                  <p class="opacity-low">
+                    <?php echo $gallery_Image['level']; ?>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="img-box">
-            <img src="images/lifetime pictures/HS.jpg">
-            <div class="transparent-box">
-              <div class="caption">
-                <p>Junior Highschool</p>
-                <p class="opacity-low">10th Grade</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="img-box">
-            <img src="images/lifetime pictures/HS2.jpg">
-            <div class="transparent-box">
-              <div class="caption">
-                <p>Junior Highschool</p>
-                <p class="opacity-low">10th Grade</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="img-box">
-            <img src="images/lifetime pictures/College.jpg">
-            <div class="transparent-box">
-              <div class="caption">
-                <p>Senior Highschool</p>
-                <p class="opacity-low">11th Grade</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="img-box">
-            <img src="images/lifetime pictures/College2.jpg">
-            <div class="transparent-box">
-              <div class="caption">
-                <p>College</p>
-                <p class="opacity-low">2nd Year</p>
-              </div>
-            </div>
-          </div>
-
-
+          <?php endforeach; ?>
         </div>
 
         <div class="mx-auto max-w-3xl text-center">
@@ -122,7 +106,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-10 inset-x-0 bottom-0">
+  <footer class="bg-gray-800 text-white py-10 ">
     <div class=" mx-auto flex flex-col sm:flex-row w-[72rem] max-w-[calc(100%-4rem)] gap-8">
       <div class=" flex flex-col sm:mx-auto space-y-6">
         <!-- Footer Navigation -->
@@ -142,20 +126,31 @@
                 <?php echo $footer_navItem['text']; ?> </a> </li>
           <?php endforeach; ?>
         </ul>
+
       </div>
       <div class="flex flex-col sm:mx-auto space-y-6">
         <h4 class="text-gray-400 text-xl font-semibold mb-4">Contact Information</h4>
-        <p class="text-gray-400">Address: <i>Project 8, Quezon City</i></p>
-        <p class="text-gray-400">Email: khoviimalow@gmail.com</p>
-        <p class="text-gray-400">Phone: 09606977***</p>
+        <p class="text-gray-400">Address: <i><?php echo $myAddress ?></i></p>
+        <p class="text-gray-400">Email: <?php echo $myEmail ?></p>
+        <p class="text-gray-400">Phone: <?php echo $myNumber ?></p>
       </div>
       <div class="flex flex-col sm:mx-auto space-y-6">
         <h4 class="text-gray-400 text-xl font-semibold mb-4">Social Media</h4>
+
+        <?php
+        $social_Links = [
+          ['url' => 'https://www.facebook.com/kobe.malonzo/', 'socmed' => 'Facebook'],
+          ['url' => 'https://twitter.com/Kokay___', 'socmed' => 'Twitter'],
+          ['url' => 'https://discordapp.com/users/723888526457962557', 'socmed' => 'Discord'],
+          ['url' => 'https://github.com/Khonsensya', 'socmed' => 'Github'],
+        ];
+        ?>
+
         <ul class="grid grid-cols-2 gap-4 sm:gap-0 sm:flex sm:flex-col sm:space-y-6">
-          <li><a href="https://www.facebook.com/kobe.malonzo/" class="hover:text-gray-500">Facebook</a></li>
-          <li><a href="https://twitter.com/Kokay___" class="hover:text-gray-500">Twitter</a></li>
-          <li><a href="https://discordapp.com/users/723888526457962557" class="hover:text-gray-500">Discord</a></li>
-          <li><a href="https://github.com/Khonsensya" class="hover:text-gray-500">Github</a></li>
+          <?php foreach ($social_Links as $social_Link) : ?>
+            <li><a href="<?php echo $social_Link['url']; ?>" class="hover:text-gray-500">
+                <?php echo $social_Link['socmed']; ?></a></li>
+          <?php endforeach; ?>
       </div>
     </div>
   </footer>

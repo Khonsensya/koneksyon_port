@@ -9,6 +9,14 @@
   <script src="/build/javascript/smoothie.js"></script>
 </head>
 
+<?php
+
+$myAddress = "Project 8, Quezon City";
+$myEmail = "khoviimalow@gmail.com";
+$myNumber = "09606977***";
+
+?>
+
 <body class="gradient-backdrop min-h-screen overflow-x-hidden bg-[#f5f5f7] align-baseline leading-none text-white dark:bg-[#1d1d1f]">
   <!-- Wrapper -->
   <div class="mx-auto w-[90rem] max-w-[calc(100%-4rem)]">
@@ -80,7 +88,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-10 inset-x-0 bottom-0">
+  <footer class="bg-gray-800 text-white py-10 ">
     <div class=" mx-auto flex flex-col sm:flex-row w-[72rem] max-w-[calc(100%-4rem)] gap-8">
       <div class=" flex flex-col sm:mx-auto space-y-6">
         <!-- Footer Navigation -->
@@ -100,20 +108,31 @@
                 <?php echo $footer_navItem['text']; ?> </a> </li>
           <?php endforeach; ?>
         </ul>
+
       </div>
       <div class="flex flex-col sm:mx-auto space-y-6">
         <h4 class="text-gray-400 text-xl font-semibold mb-4">Contact Information</h4>
-        <p class="text-gray-400">Address: <i>Project 8, Quezon City</i></p>
-        <p class="text-gray-400">Email: khoviimalow@gmail.com</p>
-        <p class="text-gray-400">Phone: 09606977***</p>
+        <p class="text-gray-400">Address: <i><?php echo $myAddress ?></i></p>
+        <p class="text-gray-400">Email: <?php echo $myEmail ?></p>
+        <p class="text-gray-400">Phone: <?php echo $myNumber ?></p>
       </div>
       <div class="flex flex-col sm:mx-auto space-y-6">
         <h4 class="text-gray-400 text-xl font-semibold mb-4">Social Media</h4>
+
+        <?php
+        $social_Links = [
+          ['url' => 'https://www.facebook.com/kobe.malonzo/', 'socmed' => 'Facebook'],
+          ['url' => 'https://twitter.com/Kokay___', 'socmed' => 'Twitter'],
+          ['url' => 'https://discordapp.com/users/723888526457962557', 'socmed' => 'Discord'],
+          ['url' => 'https://github.com/Khonsensya', 'socmed' => 'Github'],
+        ];
+        ?>
+
         <ul class="grid grid-cols-2 gap-4 sm:gap-0 sm:flex sm:flex-col sm:space-y-6">
-          <li><a href="https://www.facebook.com/kobe.malonzo/" class="hover:text-gray-500">Facebook</a></li>
-          <li><a href="https://twitter.com/Kokay___" class="hover:text-gray-500">Twitter</a></li>
-          <li><a href="https://discordapp.com/users/723888526457962557" class="hover:text-gray-500">Discord</a></li>
-          <li><a href="https://github.com/Khonsensya" class="hover:text-gray-500">Github</a></li>
+          <?php foreach ($social_Links as $social_Link) : ?>
+            <li><a href="<?php echo $social_Link['url']; ?>" class="hover:text-gray-500">
+                <?php echo $social_Link['socmed']; ?></a></li>
+          <?php endforeach; ?>
       </div>
     </div>
   </footer>
